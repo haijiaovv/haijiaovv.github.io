@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta http-equiv="Content-Language" content="zh-CN">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CASS三角网法土方量计算：结果呈现与问题解决-海角社</title>
+<meta property="og:title" content="CASS三角网法土方量计算：结果呈现与问题解决">
+<meta property="og:description" content="<h1>CASS三角网法土方量计算：结果呈现与问题解决</h1><p>在CASS软件中，利用三角网法进行土方量计算后，有时会在生成的三角网模型中出现编号。若需去除这些编号，可以根据其特性采取相应措施。如果编号是CASS的内部编码，可通过删除实体编码来移除。另一种方法是检查编号所在图层，若无其他关联工...">
+<meta property="og:url" content="https://haijiao-v3.dsmi.com.cn/eeu3.html">
+<meta property="og:type" content="article">
+    <style>
+        body {
+            font-family: "Garamond", serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.8;
+            background: #121212 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" opacity="0.04"><path d="M0,0 L80,80 M80,0 L0,80" stroke="%23cc3366" stroke-width="2"/></svg>');
+            color: #e0e0e0;
+        }
+        h1 {
+            color: #cc3366;
+            margin-bottom: 15px;
+            text-align: center;
+            text-shadow: 0 0 8px rgba(204, 51, 102, 0.5);
+            border-bottom: 2px solid #cc3366;
+            padding-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        .content {
+            color: #ccc;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(30, 30, 30, 0.8);
+            border: 1px solid #444;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            border-radius: 5px;
+            position: relative;
+        }
+        .content:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: #cc3366;
+        }
+        .tags {
+            margin: 30px 0;
+            font-size: 0.9em;
+        }
+        .tags a {
+            background: linear-gradient(to bottom, #222, #1a1a1a);
+            color: #cc9999;
+            padding: 8px 15px;
+            text-decoration: none;
+            margin-right: 10px;
+            border-radius: 4px;
+            display: inline-block;
+            margin-bottom: 10px;
+            border: 1px solid #444;
+            transition: all 0.3s;
+        }
+        .tags a:hover {
+            background: linear-gradient(to bottom, #331a1f, #2a0a14);
+            color: #cc3366;
+            border: 1px solid #cc3366;
+            box-shadow: 0 0 10px rgba(204, 51, 102, 0.3);
+        }
+        
+        .recommend-articles {
+            margin: 40px 0;
+            padding: 20px;
+            background: rgba(30, 30, 30, 0.8);
+            border-radius: 8px;
+            border: 1px solid #444;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            position: relative;
+        }
+        .recommend-articles:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(to right, #cc3366, transparent);
+        }
+        .recommend-articles h3 {
+            color: #cc3366;
+            margin-bottom: 20px;
+            text-shadow: 0 0 6px rgba(204, 51, 102, 0.4);
+        }
+
+        .recommend-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .recommend-list li {
+            margin-bottom: 15px;
+            padding-left: 25px;
+            position: relative;
+        }
+        .recommend-list li:before {
+            content: "✠";
+            color: #cc3366;
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 1.1em;
+        }
+        .recommend-list a {
+            color: #cc9999;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        .recommend-list a:hover {
+            color: #cc3366;
+            text-decoration: underline;
+            text-shadow: 0 0 5px rgba(204, 51, 102, 0.5);
+        }
+        
+        .friendly-links {
+            margin-top: 50px;
+        }
+        .friendly-links .container {
+            margin-bottom: 30px;
+        }
+        .friendly-links .title {
+            font-size: 1.1em;
+            color: #cc3366;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #444;
+        }
+        .friendly-links ul {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 10px;
+        }
+        .friendly-links li a {
+            display: block;
+            padding: 10px 12px;
+            background: linear-gradient(to bottom, #222, #1a1a1a);
+            border-radius: 4px;
+            color: #cc9999;
+            text-decoration: none;
+            font-size: 0.9em;
+            border: 1px solid #444;
+            transition: all 0.3s;
+            text-align: center;
+        }
+        .friendly-links li a:hover {
+            background: linear-gradient(to bottom, #331a1f, #2a0a14);
+            color: #cc3366;
+            border: 1px solid #cc3366;
+            box-shadow: 0 0 8px rgba(204, 51, 102, 0.3);
+        }
+        
+        a[href$="xml"] {
+            display: block;
+            text-align: center;
+            margin-top: 40px;
+            color: #999;
+            font-size: 14px;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        a[href$="xml"]:hover {
+            color: #cc3366;
+            text-decoration: underline;
+        }
+        .software-img {
+            display: block;
+            margin: 0 auto 20px;
+            max-width: 150px;
+            border: 1px solid #cc3366;
+            box-shadow: 0 0 15px rgba(204, 51, 102, 0.5);
+        }
+    </style>
+    <script src="/yidong.js"></script>
+</head>
+<body>
+    <header>
+         <img src="/logo.jpg" alt="logo" class="software-img">   
+    </header>
+
+    <h1>CASS三角网法土方量计算：结果呈现与问题解决</h1>
+
+    <div class="content">
+        <p><h1>CASS三角网法土方量计算：结果呈现与问题解决</h1><p>在CASS软件中，利用三角网法进行土方量计算后，有时会在生成的三角网模型中出现编号。若需去除这些编号，可以根据其特性采取相应措施。如果编号是CASS的内部编码，可通过删除实体编码来移除。另一种方法是检查编号所在图层，若无其他关联工具，可使用layiso命令单显该图层并删除所有编号。此外，还可以根据编号与文本在颜色、字体大小、格式等方面的差异进行快速选择和删除。</p><p>使用CASS进行土方量计算，特别是DTM（数字地形模型）法，需要先构建DTM模型。这通常涉及两个阶段：未开挖前的原始地形和开挖后的地形。首先，利用未开挖前的测量测点数据文件（通常为.dat格式）构建DTM模型。具体操作路径为：“等高线”菜单下的“构建DTM”，选择“由数据文件生成”，导入测点数据。生成DTM后，通过“等高线”菜单中的“三角网导出”功能，选择“写入文件”，将DTM模型保存为如“原有地形.sjw”的文件。对开挖后的测点数据重复此过程，生成“开挖后地形.sjw”文件。</p><p>在CASS中进行两期土方量计算，操作步骤如下：首先，分别构建并保存两期的DTM模型（如上所述）。然后，进入“工程应用”菜单，选择“DTM法土方量计算”下的“计算两期土方”功能。在命令提示符中输入“三角网文件”，并按提示依次读取之前保存的两期三角网文件。系统将自动计算并显示前后两期之间的土方量。若要使用方格网法计算土方量，则在生成开挖后的三角网DTM后，选择闭合的边界线，点击“方格网法土方计算”。随后，选择原始地面数据和开挖后的三角网文件，设置方格网宽度，点击“确定”即可进行计算。</p><p>在南方CASS中，采用方格网法计算土方量的具体步骤包括：首先，展示“前期”高程点文件（即开挖或换填后的测量数据），并在此基础上选择“等高线”下的“构建DTM”命令，选择“由数据文件生成”。这样会在“前期”数据文件存储位置自动生成“前期.sjw”三角网文件。接着，展示“后期”高程点数据，重复上述DTM构建过程，生成“后期.sjw”三角网文件。之后，在“工程应用”菜单中选择“方格网法土方计算”，选择计算区域的边界线（需要闭合），然后选择“前期.sjw”和“后期.sjw”三角网文件，设置方格网尺寸（例如5米），点击“确定”即可得到土方量计算结果。</p><p>对于希望使用CAD软件进行土方量计算的用户，三角网法是一种常用且有效的方法。其基本流程包括：准备原始地面和开挖后的.dat格式数据。打开CASS软件，加载高程点数据。使用PL（多段线）命令绘制并闭合需要计算的区域边界线。接着，通过CASS的DTM功能生成三角网模型。随后，选择“工程应用”下的“方格网法土方计算”功能，选取绘制好的闭合边界线。系统会提示输入目标高程点文件（或直接读取已有的DTM），然后设置方格网的大小。点击“确定”后，软件将计算并显示出土方总量。</p><p>如果需要在CAD环境下（如南方CASS）进行更精细的土方量计算，可以借助专业的CAD二次开发软件，例如飞时达土方量计算软件。对于初学者，掌握方格网法、断面法和DTM法是关键，其中方格网法因其简单直观，特别适用于地形变化平缓的区域。在CASS中，方格网法土方量计算的命令路径为：“工程应用”——“方格网法土方计算”。用户需要先用PL命令绘制闭合的土方量计算边界线，然后选择该边界线。在弹出的对话框中，需要输入前期和后期的 terreno（高程）文件，并设定方格网的大小。完成设置后，点击“确定”即可输出计算结果。</p><p>此外，在CASS中计算土方量还可以生成里程文件（如纵断面线、复合线、等高线、三角网、坐标文件），选择不同的土方量计算规范（如道路断面、场地断面、任意断面），设置横断面设计线参数以生成各里程点的横断面图，最终选中所有里程点的横断面图生成土方量计算表。</p><p>要使用南方CASS软件计算土方量，可以使用“工程应用”菜单下的“方格网土方计算”功能。在使用此功能前，需要使用PL（多段线）命令绘制并闭合土方量计算的区域边界线。接着，选择该闭合的边界线，随后系统会弹出对话框，要求输入前期（原始地面）和后期（开挖后）的高程文件（通常为.dat格式），并设定方格网的大小。点击“确定”后，软件将进行计算并给出土方量结果。若要进行两期土方计算，需先分别对两个时期的数据构建DTM模型并保存。然后，选择“工程应用\DTM法土方计算\计算两期土方量”命令，并按提示选择或输入第一期和第二期的三角网文件。</p></p>
+    </div>
+    
+    <div class="recommend-articles">
+        <h3>2篇随机内容推荐</h3>
+        <ul class="recommend-list">
+            <li><a href="cg0lso5iwth.html">软萌兔兔酱-娇小萝莉COSer白虎作品合集</a></li><li><a href="ptoyf.html">米娜学姐是哪本书里的</a></li>
+        </ul>
+    </div>
+    
+    <div class="friendly-links">
+        <div class="container">
+            <h4 class="title">生活点滴好用</h4>
+            <ul>
+                <li><a href="http://www.weizhang8.cn/" rel="nofollow" target="_blank">违章查询</a></li>
+                <li><a href="https://www.didiglobal.com/" rel="nofollow" target="_blank">滴滴打车</a></li>
+            </ul>
+        </div>
+        
+        <div class="container">
+            <h4 class="title">购物网址大全</h4>
+            <ul>
+                <li><a href="http://www.vip.com/" rel="nofollow" target="_blank">唯品会</a></li>
+                <li><a href="http://www.vmall.com/" rel="nofollow" target="_blank">华为商城</a></li>
+                <li><a href="http://www.tmall.com/" rel="nofollow" target="_blank">天猫商城</a></li>
+                <li><a href="https://www.amazon.cn/" rel="nofollow" target="_blank">亚马逊</a></li>
+                <li><a href="http://www.jd.com/" rel="nofollow" target="_blank">京东商城</a></li>
+            </ul>
+        </div>
+    </div>
+    <a href="sitemap.xml" target="_blank">网站地图</a>
+</body>
+</html>

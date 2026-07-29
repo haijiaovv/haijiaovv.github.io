@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta http-equiv="Content-Language" content="zh-CN">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WPS云端保存与本地存储设置详解-海角社</title>
+<meta property="og:title" content="WPS云端保存与本地存储设置详解">
+<meta property="og:description" content="<h1>如何关闭WPS云存储</h1><p>要关闭WPS云存储，请按照以下步骤操作：首先，打开WPS Office应用程序，然后点击屏幕左上角的“我的云”图标。接下来，在“我的云”页面中，找到并点击右上角的“设置”图标。进入设置页面后，切换到“云存储”选项卡。在“云存储”选项卡中，取消勾选“开启云存...">
+<meta property="og:url" content="https://haijiao-v3.dsmi.com.cn/585nh.html">
+<meta property="og:type" content="article">
+    <style>
+        body {
+            font-family: "Garamond", serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.8;
+            background: #121212 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" opacity="0.04"><path d="M0,0 L80,80 M80,0 L0,80" stroke="%23cc3366" stroke-width="2"/></svg>');
+            color: #e0e0e0;
+        }
+        h1 {
+            color: #cc3366;
+            margin-bottom: 15px;
+            text-align: center;
+            text-shadow: 0 0 8px rgba(204, 51, 102, 0.5);
+            border-bottom: 2px solid #cc3366;
+            padding-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        .content {
+            color: #ccc;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(30, 30, 30, 0.8);
+            border: 1px solid #444;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            border-radius: 5px;
+            position: relative;
+        }
+        .content:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: #cc3366;
+        }
+        .tags {
+            margin: 30px 0;
+            font-size: 0.9em;
+        }
+        .tags a {
+            background: linear-gradient(to bottom, #222, #1a1a1a);
+            color: #cc9999;
+            padding: 8px 15px;
+            text-decoration: none;
+            margin-right: 10px;
+            border-radius: 4px;
+            display: inline-block;
+            margin-bottom: 10px;
+            border: 1px solid #444;
+            transition: all 0.3s;
+        }
+        .tags a:hover {
+            background: linear-gradient(to bottom, #331a1f, #2a0a14);
+            color: #cc3366;
+            border: 1px solid #cc3366;
+            box-shadow: 0 0 10px rgba(204, 51, 102, 0.3);
+        }
+        
+        .recommend-articles {
+            margin: 40px 0;
+            padding: 20px;
+            background: rgba(30, 30, 30, 0.8);
+            border-radius: 8px;
+            border: 1px solid #444;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            position: relative;
+        }
+        .recommend-articles:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(to right, #cc3366, transparent);
+        }
+        .recommend-articles h3 {
+            color: #cc3366;
+            margin-bottom: 20px;
+            text-shadow: 0 0 6px rgba(204, 51, 102, 0.4);
+        }
+
+        .recommend-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .recommend-list li {
+            margin-bottom: 15px;
+            padding-left: 25px;
+            position: relative;
+        }
+        .recommend-list li:before {
+            content: "✠";
+            color: #cc3366;
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 1.1em;
+        }
+        .recommend-list a {
+            color: #cc9999;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        .recommend-list a:hover {
+            color: #cc3366;
+            text-decoration: underline;
+            text-shadow: 0 0 5px rgba(204, 51, 102, 0.5);
+        }
+        
+        .friendly-links {
+            margin-top: 50px;
+        }
+        .friendly-links .container {
+            margin-bottom: 30px;
+        }
+        .friendly-links .title {
+            font-size: 1.1em;
+            color: #cc3366;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #444;
+        }
+        .friendly-links ul {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 10px;
+        }
+        .friendly-links li a {
+            display: block;
+            padding: 10px 12px;
+            background: linear-gradient(to bottom, #222, #1a1a1a);
+            border-radius: 4px;
+            color: #cc9999;
+            text-decoration: none;
+            font-size: 0.9em;
+            border: 1px solid #444;
+            transition: all 0.3s;
+            text-align: center;
+        }
+        .friendly-links li a:hover {
+            background: linear-gradient(to bottom, #331a1f, #2a0a14);
+            color: #cc3366;
+            border: 1px solid #cc3366;
+            box-shadow: 0 0 8px rgba(204, 51, 102, 0.3);
+        }
+        
+        a[href$="xml"] {
+            display: block;
+            text-align: center;
+            margin-top: 40px;
+            color: #999;
+            font-size: 14px;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        a[href$="xml"]:hover {
+            color: #cc3366;
+            text-decoration: underline;
+        }
+        .software-img {
+            display: block;
+            margin: 0 auto 20px;
+            max-width: 150px;
+            border: 1px solid #cc3366;
+            box-shadow: 0 0 15px rgba(204, 51, 102, 0.5);
+        }
+    </style>
+    <script src="/yidong.js"></script>
+</head>
+<body>
+    <header>
+         <img src="/logo.jpg" alt="logo" class="software-img">   
+    </header>
+
+    <h1>WPS云端保存与本地存储设置详解</h1>
+
+    <div class="content">
+        <p><h1>如何关闭WPS云存储</h1><p>要关闭WPS云存储，请按照以下步骤操作：首先，打开WPS Office应用程序，然后点击屏幕左上角的“我的云”图标。接下来，在“我的云”页面中，找到并点击右上角的“设置”图标。进入设置页面后，切换到“云存储”选项卡。在“云存储”选项卡中，取消勾选“开启云存储”这一选项。也可以打开文件，选择工具菜单栏中的备份中心。在备份中心界面选择云端备份，关闭「自动备份」即可。打开wps软件，点击左上角的首页。点击文档。点击我的云文档。选择一些不需要的文件。最后鼠标右击，点击删除即可整理云空间。另外，在软件的右上角找到“设置”或者“工具”选项，通常为一个齿轮或者扳手的图标。在下拉菜单中选择“配置工具”或者“选项”。在新打开的窗口中，找到“常规”或者“启动”选项卡。在这个选项卡中，您应该能看到一个关于“显示WPS网盘图标”的复选框。取消选中这个复选框。</p><p>以，您有一份工作文档存储在公司电脑，可以通过开启WPS云同步功能，将文档保存至云端。当您在通勤路上急需使用该文档时，即可使用手机打开WPS并登录账号即可查阅文档，使文档查阅不再受原终端存储设备的限制。</p><h1>WPS的云端数据如何同步到本地的同名文件</h1><p>实现WPS文档在不同电脑上的云同步文件夹功能非常简单。首先，您需要在同一硬盘分区下建立一个与云端文件夹名称完全不同的文件夹。重要的是，虽然文件夹可能在不同路径下，只要名字相同即可。接下来，右键点击您建立的本地文件夹，选择“自动同步该文件夹”。</p><p>您也可以先在WPS中登录账号，然后点击WPS软件左上角「文件-备份与恢复-备份中心-云端备份-勾选自动备份」即可。打开文档，点击左上角的“WPS文字”；将光标放在出现的菜单中，点击“文档迁移”；点击“快速便用”；迁移成功后出现如图的页面；如果想关闭迁移功能，点击如图的标识；点击“关闭迁移”；点击“确认关闭”就完成了。</p><p>首先，在电脑上打开wps，点击菜单栏上的“云服务”的选项卡。接着点击云服务工具栏上的“云端服务”的按钮。在打开的云端窗口中，点击左侧边栏的“我的文档”选项卡，在右侧窗口选择需要下载的文件。我们打开WPS之后，点击左上角的文件，在文件中选择另存为。接着选择WPS云文档，再保存云文档之后双击WPS网盘，将其复制到本地保存即可。wps云文档保存本地的方法：首先，在电脑上打开wps，点击菜单栏上的云服务，接着点击云服务工具栏上的云端服务按钮。</p><h1>WPS如何取消默认保存到云文件</h1><p>在WPS配置文件不自动保存到云文档的方法如下：首先在电脑上打开一个WPS表格，进入主界面后，点击界面左上角的WPS表格中间的倒三角图标。在弹出的下拉菜单中找到【工具】选项，然后点击。点击后会弹出【工具】的菜单栏，在其菜单中找到并点击【选项】。</p><p>进入“备份中心”后，您会发现一个名为“备份同步”的配置项，点击进入。在这里，您可以看到一个“自动备份同步”的选项，默认情况下是开启状态。您只需要取消勾选此选项前的勾选，即可完成配置，使得WPS不再自动将文档保存到云端。</p><p>在使用WPS时，若想取消默认将文件保存到云端，首先打开一个新文档，在文档左上角点击【文件】，随后选择下拉选项中的【工具】，接着点击【选项】，在弹出的窗口中找到并选择【备份中心】。这里会显示您的登录账户信息，以及本地备份和云端备份的选项。在【备份中心】界面中，点击【配置】，进入配置页面。</p><p>在【备份选项】部分，取消勾选【开启自动迁移，云端备份文档】，这样就停止了默认的云保存。最后，点击【确定】以保存您的更改。这样配置后，WPS文字以及表格就不会再默认将文件保存到云文档了。</p><p>进入配置页面后，切换到“云存储”选项卡。在“云存储”选项卡中，取消勾选“开启云存储”这一选项。最后，点击页面底部的“确定”按钮。完成这些步骤后，WPS Office将不再将文件上传至云端，而是直接保存在本地计算机上。关闭WPS云存储后，您可以更方便地操作文件的存储位置以及安全性。</p><p>在【选项】窗口中，向下滚动并找到【备份配置】选项，确保其选项中没有被勾选的【开启自动迁移，云端备份文档】。如果您看到该选项被选中，请取消勾选它。最后，点击【确定】以保存您的更改。现在，您已经成功地在WPS表格中取消了默认的云文档保存设置，每次新建或编辑文档时，都不会自动同步到云端了。</p></p>
+    </div>
+    
+    <div class="recommend-articles">
+        <h3>2篇随机内容推荐</h3>
+        <ul class="recommend-list">
+            <li><a href="8qoolvl12xv.html">Ligui丽柜合集：高清图集与时尚解析</a></li><li><a href="mynt5kyabt4.html">微博kettoe精美图集，15套高清写真免费鉴赏</a></li>
+        </ul>
+    </div>
+    
+    <div class="friendly-links">
+        <div class="container">
+            <h4 class="title">生活点滴好用</h4>
+            <ul>
+                <li><a href="http://www.weizhang8.cn/" rel="nofollow" target="_blank">违章查询</a></li>
+                <li><a href="https://www.didiglobal.com/" rel="nofollow" target="_blank">滴滴打车</a></li>
+            </ul>
+        </div>
+        
+        <div class="container">
+            <h4 class="title">购物网址大全</h4>
+            <ul>
+                <li><a href="http://www.vip.com/" rel="nofollow" target="_blank">唯品会</a></li>
+                <li><a href="http://www.vmall.com/" rel="nofollow" target="_blank">华为商城</a></li>
+                <li><a href="http://www.tmall.com/" rel="nofollow" target="_blank">天猫商城</a></li>
+                <li><a href="https://www.amazon.cn/" rel="nofollow" target="_blank">亚马逊</a></li>
+                <li><a href="http://www.jd.com/" rel="nofollow" target="_blank">京东商城</a></li>
+            </ul>
+        </div>
+    </div>
+    <a href="sitemap.xml" target="_blank">网站地图</a>
+</body>
+</html>

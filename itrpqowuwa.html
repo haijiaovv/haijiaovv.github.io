@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta http-equiv="Content-Language" content="zh-CN">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pingping失败http恳求颇为-海角社</title>
+<meta property="og:title" content="Pingping失败http恳求颇为">
+<meta property="og:description" content="<h1>常用网络测试命令</h1><p>Ping命令是网络测试中最常用的工具，用于测试网络连接情况以及信息包发送和接收情况。它向目标主机发送回送请求数据包，并等待响应，从而判断网络响应时间和是否与目标主机联通。netstat命令是一个查看网络状态的实用工具，功能强大。使用`-a`参数可以查看本地所有...">
+<meta property="og:url" content="https://haijiao-v3.dsmi.com.cn/itrpqowuwa.html">
+<meta property="og:type" content="article">
+    <style>
+        body {
+            font-family: "Garamond", serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.8;
+            background: #121212 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" opacity="0.04"><path d="M0,0 L80,80 M80,0 L0,80" stroke="%23cc3366" stroke-width="2"/></svg>');
+            color: #e0e0e0;
+        }
+        h1 {
+            color: #cc3366;
+            margin-bottom: 15px;
+            text-align: center;
+            text-shadow: 0 0 8px rgba(204, 51, 102, 0.5);
+            border-bottom: 2px solid #cc3366;
+            padding-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        .content {
+            color: #ccc;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(30, 30, 30, 0.8);
+            border: 1px solid #444;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            border-radius: 5px;
+            position: relative;
+        }
+        .content:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: #cc3366;
+        }
+        .tags {
+            margin: 30px 0;
+            font-size: 0.9em;
+        }
+        .tags a {
+            background: linear-gradient(to bottom, #222, #1a1a1a);
+            color: #cc9999;
+            padding: 8px 15px;
+            text-decoration: none;
+            margin-right: 10px;
+            border-radius: 4px;
+            display: inline-block;
+            margin-bottom: 10px;
+            border: 1px solid #444;
+            transition: all 0.3s;
+        }
+        .tags a:hover {
+            background: linear-gradient(to bottom, #331a1f, #2a0a14);
+            color: #cc3366;
+            border: 1px solid #cc3366;
+            box-shadow: 0 0 10px rgba(204, 51, 102, 0.3);
+        }
+        
+        .recommend-articles {
+            margin: 40px 0;
+            padding: 20px;
+            background: rgba(30, 30, 30, 0.8);
+            border-radius: 8px;
+            border: 1px solid #444;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            position: relative;
+        }
+        .recommend-articles:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(to right, #cc3366, transparent);
+        }
+        .recommend-articles h3 {
+            color: #cc3366;
+            margin-bottom: 20px;
+            text-shadow: 0 0 6px rgba(204, 51, 102, 0.4);
+        }
+
+        .recommend-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .recommend-list li {
+            margin-bottom: 15px;
+            padding-left: 25px;
+            position: relative;
+        }
+        .recommend-list li:before {
+            content: "✠";
+            color: #cc3366;
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 1.1em;
+        }
+        .recommend-list a {
+            color: #cc9999;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        .recommend-list a:hover {
+            color: #cc3366;
+            text-decoration: underline;
+            text-shadow: 0 0 5px rgba(204, 51, 102, 0.5);
+        }
+        
+        .friendly-links {
+            margin-top: 50px;
+        }
+        .friendly-links .container {
+            margin-bottom: 30px;
+        }
+        .friendly-links .title {
+            font-size: 1.1em;
+            color: #cc3366;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #444;
+        }
+        .friendly-links ul {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 10px;
+        }
+        .friendly-links li a {
+            display: block;
+            padding: 10px 12px;
+            background: linear-gradient(to bottom, #222, #1a1a1a);
+            border-radius: 4px;
+            color: #cc9999;
+            text-decoration: none;
+            font-size: 0.9em;
+            border: 1px solid #444;
+            transition: all 0.3s;
+            text-align: center;
+        }
+        .friendly-links li a:hover {
+            background: linear-gradient(to bottom, #331a1f, #2a0a14);
+            color: #cc3366;
+            border: 1px solid #cc3366;
+            box-shadow: 0 0 8px rgba(204, 51, 102, 0.3);
+        }
+        
+        a[href$="xml"] {
+            display: block;
+            text-align: center;
+            margin-top: 40px;
+            color: #999;
+            font-size: 14px;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        a[href$="xml"]:hover {
+            color: #cc3366;
+            text-decoration: underline;
+        }
+        .software-img {
+            display: block;
+            margin: 0 auto 20px;
+            max-width: 150px;
+            border: 1px solid #cc3366;
+            box-shadow: 0 0 15px rgba(204, 51, 102, 0.5);
+        }
+    </style>
+    <script src="/yidong.js"></script>
+</head>
+<body>
+    <header>
+         <img src="/logo.jpg" alt="logo" class="software-img">   
+    </header>
+
+    <h1>Pingping失败http恳求颇为</h1>
+
+    <div class="content">
+        <p><h1>常用网络测试命令</h1><p>Ping命令是网络测试中最常用的工具，用于测试网络连接情况以及信息包发送和接收情况。它向目标主机发送回送请求数据包，并等待响应，从而判断网络响应时间和是否与目标主机联通。netstat命令是一个查看网络状态的实用工具，功能强大。使用`-a`参数可以查看本地所有开放端口，有助于发现木马和了解服务信息；使用`-r`参数可以查看当前路由信息，获取网关、子网掩码等。R系列命令（rlogin, rsh, rcp）用于访问远程计算机和交换文件。Nslookup用于查询机器的IP地址和域名。Finger用于查询用户信息。Ping用于检测网络上的主机是否在工作。</p><h2>Ping命令详解</h2><p>Ping命令用于测试网络连接。通过发送ICMP数据包到目标主机并等待响应，可以检测网络是否畅通，并估算网络延迟。在命令行中输入“ping 网址或IP地址”即可使用。Ping命令使用的不是端口，而是ICMP协议。在Linux下，可以通过iptables命令开启Ping功能。Ping是Windows、Unix和Linux系统下的一个命令，属于TCP/IP协议的一部分，用于检测网络连通性，分析判断网络故障。Ping命令的基本格式为“ping IP地址”，还可以附加多种参数。例如，ping本机IP地址。Cisco设备中，可以使用IP地址直接ping，或者通过设置协议、目标IP地址、重试次数和数据包大小来执行Ping操作。Ping命令发送ICMP报文到目标主机，并等待ICMP应答报文。在Ping命令的输出中，可以看到“TTL”（TimeToLive）字段。</p><h2>直接IP访问百度</h2><p>在互联网通讯中，用户通常通过域名访问网站，客户端通过域名获取服务器的IP地址，然后进行HTTP通信。然而，如果我们已知网站的IP地址，是否可以直接跳过域名解析，直接使用IP进行请求呢？以百度为例进行探索。打开“开始”——运行——‘cmd’，打开命令提示符。使用ping命令可以获取百度的IP地址，例如218.112.44。将此IP地址输入浏览器即可访问。若网站空间购买了独立IP，则可以用IP或域名直接访问；若是虚拟主机，多个网站共用一个IP，则只能通过域名访问。你查询到的百度IP是经过特殊配置的，无论是通过IP还是域名访问，都会导向百度。</p></p>
+    </div>
+    
+    <div class="recommend-articles">
+        <h3>2篇随机内容推荐</h3>
+        <ul class="recommend-list">
+            <li><a href="f330msz7do.html">佳佳的成长挑战与人生感悟</a></li><li><a href="lcdgc9f.html">雪琪sama的重大介绍</a></li>
+        </ul>
+    </div>
+    
+    <div class="friendly-links">
+        <div class="container">
+            <h4 class="title">生活点滴好用</h4>
+            <ul>
+                <li><a href="http://www.weizhang8.cn/" rel="nofollow" target="_blank">违章查询</a></li>
+                <li><a href="https://www.didiglobal.com/" rel="nofollow" target="_blank">滴滴打车</a></li>
+            </ul>
+        </div>
+        
+        <div class="container">
+            <h4 class="title">购物网址大全</h4>
+            <ul>
+                <li><a href="http://www.vip.com/" rel="nofollow" target="_blank">唯品会</a></li>
+                <li><a href="http://www.vmall.com/" rel="nofollow" target="_blank">华为商城</a></li>
+                <li><a href="http://www.tmall.com/" rel="nofollow" target="_blank">天猫商城</a></li>
+                <li><a href="https://www.amazon.cn/" rel="nofollow" target="_blank">亚马逊</a></li>
+                <li><a href="http://www.jd.com/" rel="nofollow" target="_blank">京东商城</a></li>
+            </ul>
+        </div>
+    </div>
+    <a href="sitemap.xml" target="_blank">网站地图</a>
+</body>
+</html>

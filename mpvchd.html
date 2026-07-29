@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta http-equiv="Content-Language" content="zh-CN">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小恩写真-海角社</title>
+<meta property="og:title" content="小恩写真">
+<meta property="og:description" content="<h1>我在小恩爱里上传的照片，对方是否能看到删除提示？</h1><p>在小恩爱这款情侣互动应用中，相册功能是双方共享的。因此，当一方在相册中删除照片时，另一方通常会收到相关的提示或通知。这意味着，您的删除行为是可能被对方知晓的。</p><p>若您在使用小恩爱时，删除了应用本身，另一半通常是能够察觉...">
+<meta property="og:url" content="https://haijiao-v3.dsmi.com.cn/mpvchd.html">
+<meta property="og:type" content="article">
+    <style>
+        body {
+            font-family: "Garamond", serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.8;
+            background: #121212 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" opacity="0.04"><path d="M0,0 L80,80 M80,0 L0,80" stroke="%23cc3366" stroke-width="2"/></svg>');
+            color: #e0e0e0;
+        }
+        h1 {
+            color: #cc3366;
+            margin-bottom: 15px;
+            text-align: center;
+            text-shadow: 0 0 8px rgba(204, 51, 102, 0.5);
+            border-bottom: 2px solid #cc3366;
+            padding-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        .content {
+            color: #ccc;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(30, 30, 30, 0.8);
+            border: 1px solid #444;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            border-radius: 5px;
+            position: relative;
+        }
+        .content:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: #cc3366;
+        }
+        .tags {
+            margin: 30px 0;
+            font-size: 0.9em;
+        }
+        .tags a {
+            background: linear-gradient(to bottom, #222, #1a1a1a);
+            color: #cc9999;
+            padding: 8px 15px;
+            text-decoration: none;
+            margin-right: 10px;
+            border-radius: 4px;
+            display: inline-block;
+            margin-bottom: 10px;
+            border: 1px solid #444;
+            transition: all 0.3s;
+        }
+        .tags a:hover {
+            background: linear-gradient(to bottom, #331a1f, #2a0a14);
+            color: #cc3366;
+            border: 1px solid #cc3366;
+            box-shadow: 0 0 10px rgba(204, 51, 102, 0.3);
+        }
+        
+        .recommend-articles {
+            margin: 40px 0;
+            padding: 20px;
+            background: rgba(30, 30, 30, 0.8);
+            border-radius: 8px;
+            border: 1px solid #444;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            position: relative;
+        }
+        .recommend-articles:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(to right, #cc3366, transparent);
+        }
+        .recommend-articles h3 {
+            color: #cc3366;
+            margin-bottom: 20px;
+            text-shadow: 0 0 6px rgba(204, 51, 102, 0.4);
+        }
+
+        .recommend-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .recommend-list li {
+            margin-bottom: 15px;
+            padding-left: 25px;
+            position: relative;
+        }
+        .recommend-list li:before {
+            content: "✠";
+            color: #cc3366;
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 1.1em;
+        }
+        .recommend-list a {
+            color: #cc9999;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        .recommend-list a:hover {
+            color: #cc3366;
+            text-decoration: underline;
+            text-shadow: 0 0 5px rgba(204, 51, 102, 0.5);
+        }
+        
+        .friendly-links {
+            margin-top: 50px;
+        }
+        .friendly-links .container {
+            margin-bottom: 30px;
+        }
+        .friendly-links .title {
+            font-size: 1.1em;
+            color: #cc3366;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #444;
+        }
+        .friendly-links ul {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 10px;
+        }
+        .friendly-links li a {
+            display: block;
+            padding: 10px 12px;
+            background: linear-gradient(to bottom, #222, #1a1a1a);
+            border-radius: 4px;
+            color: #cc9999;
+            text-decoration: none;
+            font-size: 0.9em;
+            border: 1px solid #444;
+            transition: all 0.3s;
+            text-align: center;
+        }
+        .friendly-links li a:hover {
+            background: linear-gradient(to bottom, #331a1f, #2a0a14);
+            color: #cc3366;
+            border: 1px solid #cc3366;
+            box-shadow: 0 0 8px rgba(204, 51, 102, 0.3);
+        }
+        
+        a[href$="xml"] {
+            display: block;
+            text-align: center;
+            margin-top: 40px;
+            color: #999;
+            font-size: 14px;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        a[href$="xml"]:hover {
+            color: #cc3366;
+            text-decoration: underline;
+        }
+        .software-img {
+            display: block;
+            margin: 0 auto 20px;
+            max-width: 150px;
+            border: 1px solid #cc3366;
+            box-shadow: 0 0 15px rgba(204, 51, 102, 0.5);
+        }
+    </style>
+    <script src="/yidong.js"></script>
+</head>
+<body>
+    <header>
+         <img src="/logo.jpg" alt="logo" class="software-img">   
+    </header>
+
+    <h1>小恩写真</h1>
+
+    <div class="content">
+        <p><h1>我在小恩爱里上传的照片，对方是否能看到删除提示？</h1><p>在小恩爱这款情侣互动应用中，相册功能是双方共享的。因此，当一方在相册中删除照片时，另一方通常会收到相关的提示或通知。这意味着，您的删除行为是可能被对方知晓的。</p><p>若您在使用小恩爱时，删除了应用本身，另一半通常是能够察觉到的。这是因为情侣应用中的信息、聊天记录等都是互通的。若其中一方卸载了应用，那么另一方将无法与该用户进行互动，也无法看到过往的聊天记录等信息，从而很容易发现对方已卸载应用。</p><p>对方并不会直接收到“卸载提示”。发送消息时，卸载账号仍然可以接收消息，重新安装后也能继续查看。然而，长期不回复消息可能会引起对方的怀疑。如果您想终止使用，直接告知对方是更好的选择。</p><p>单纯卸载应用并不会向另一半发送通知。对方的消息通知主要集中在您发送消息以及解除双方关系时。尽管没有卸载提示，但如果您长期不在线，对方在发送消息而您没有回复时，也可能怀疑您已卸载应用。因此，避免“自欺欺人”非常重要。</p><p>即使对方清空了聊天记录，您这边仍然可以看到。这是应用的设计逻辑，旨在确保信息的完整性，即使一方删除，另一方仍能保有记录。</p><h2>如何成为一名优秀的影楼门市</h2><p>作为一名影楼门市从业者，首先需要进行清晰的自我定位。清晰的定位如同明确的态度，它决定了您思考问题和处理业务的方向。一个明确的自我认知是做好门市工作的基础。</p><p>此外，门市工作人员必须掌握扎实的专业知识，深入了解公司提供的各项服务和产品，以便能够精准、有效地向客户进行介绍和推荐。同时，紧跟摄影行业的最新发展趋势，及时为客户提供前沿信息和专业建议，是提升服务质量的关键。</p><p>门市人员在客户选片前，应始终保持热情友好的态度，面带微笑。这种积极的态度是提升个人业绩的秘诀。门市人员应当像一台充满活力的发动机，永远散发着积极向上的能量。他们的存在能够感染他人，所到之处皆充满欢声笑语。这正是优秀门市人员应具备的基本素质。</p><h2>房地产推广活动策划方案</h2><p>活动将按照既定方案有序开展。在活动进行期间，将有工作人员引导客户参与各项趣味互动项目。同时，现场将布置萨克斯演奏，营造浪漫的音乐氛围。活动预计在17:30左右圆满结束。</p><p>本次房地产推广活动主题为：“浪漫七夕，相邀美好”与“浪漫满屋，幸福七夕”。活动背景定于每年农历七月初七，我国传统节日七夕节。因活动主要参与者是XX（此处可替换为具体目标群体），且节日内容以乞巧为主，故此日也被称为“乞巧节”、“XX节”或“女儿节”。</p><p>房地产活动策划篇：名城项目集商品住宅与商业旺铺于一体，为进一步提升销售业绩，特策划举办中秋晚会活动。</p><p>活动时间初步定于X年X月X日上午，地点设在售楼中心现场。参与人员将包括活动工作人员、意向客户、礼仪人员、主持人以及特邀贵宾。拟邀贵宾名单包括市XX主管领导、市建委及市房地产管理部门领导，以及市建筑设计院的相关负责人。</p><h2>童年时期的别称</h2><p>形容“小时候”的词语有很多，例如：翘首以盼、翘首仰望、鸡鸣候旦。这些词语都可以用来描绘等待或期盼的心情，也暗示了童年时期对未来的憧憬。</p><p>“小时候”的拼音是“xiǎoshíhòu”。这个词语由“小”、“时”、“候”三个字组成。“小”是独体字，“时”和“候”都是左右结构。作为形容词，“小时候”用来描述年幼或少年时期。</p><p>与“小时候”意义相近的词语包括“童年时”、“年幼时”。例如：“他小时候的名字叫小明。”这句话描绘了一个人年幼时的情景。其拼音为：xiǎoshíhòu。释义为：年幼或者少年时期。</p><p>在古语中，“小”可以意译为“幼”或“儿”，“时候”可以意译为“日”或“时”。因此，“小时候”在古语中可以表达为“幼日”或“儿时”。</p><p>与“时间”相近的词语包括：光景、时光、岁月、光阴、时节、辰光、光阴、时刻、时辰、辰光。例如：“行动会在特定的时间举行。”“天气好的时候，会有小鸟飞过。”“夜深人静的时候，能听到远处的钟声。”</p><p>儿童时期可以用多种词语来形容，如“童年”、“幼年”、“年少”等。这一时期在心理、生理、社会发展和教育等方面都有其独特的特点。心理上，儿童通常思维纯真、自我意识尚不完善、注意力不易集中。</p></p>
+    </div>
+    
+    <div class="recommend-articles">
+        <h3>2篇随机内容推荐</h3>
+        <ul class="recommend-list">
+            <li><a href="bznckqun.html">桜井宁宁-总体质料</a></li><li><a href="285n9726oh.html">火影忍者角色日本名深析</a></li>
+        </ul>
+    </div>
+    
+    <div class="friendly-links">
+        <div class="container">
+            <h4 class="title">生活点滴好用</h4>
+            <ul>
+                <li><a href="http://www.weizhang8.cn/" rel="nofollow" target="_blank">违章查询</a></li>
+                <li><a href="https://www.didiglobal.com/" rel="nofollow" target="_blank">滴滴打车</a></li>
+            </ul>
+        </div>
+        
+        <div class="container">
+            <h4 class="title">购物网址大全</h4>
+            <ul>
+                <li><a href="http://www.vip.com/" rel="nofollow" target="_blank">唯品会</a></li>
+                <li><a href="http://www.vmall.com/" rel="nofollow" target="_blank">华为商城</a></li>
+                <li><a href="http://www.tmall.com/" rel="nofollow" target="_blank">天猫商城</a></li>
+                <li><a href="https://www.amazon.cn/" rel="nofollow" target="_blank">亚马逊</a></li>
+                <li><a href="http://www.jd.com/" rel="nofollow" target="_blank">京东商城</a></li>
+            </ul>
+        </div>
+    </div>
+    <a href="sitemap.xml" target="_blank">网站地图</a>
+</body>
+</html>

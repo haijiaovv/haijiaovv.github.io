@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta http-equiv="Content-Language" content="zh-CN">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>萌萝社：二次元爱好者的聚集地，畅享漫画与社交新体验-海角社</title>
+<meta property="og:title" content="萌萝社：二次元爱好者的聚集地，畅享漫画与社交新体验">
+<meta property="og:description" content="<h1>探索萌萝社：你的专属二次元乐园</h1><p>萌萝社APP，一款专为二次元爱好者打造的互动社交软件，汇聚海量漫画资源，提供丰富的短视频作品，更有直播间互动与cosplay交流，让你沉浸在浓厚的二次元氛围中。无论你是漫画迷、短视频爱好者，还是希望结识同好，萌萝社都能满足你的需求。</p><h2...">
+<meta property="og:url" content="https://haijiao-v3.dsmi.com.cn/xzwi.html">
+<meta property="og:type" content="article">
+    <style>
+        body {
+            font-family: "Garamond", serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.8;
+            background: #121212 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" opacity="0.04"><path d="M0,0 L80,80 M80,0 L0,80" stroke="%23cc3366" stroke-width="2"/></svg>');
+            color: #e0e0e0;
+        }
+        h1 {
+            color: #cc3366;
+            margin-bottom: 15px;
+            text-align: center;
+            text-shadow: 0 0 8px rgba(204, 51, 102, 0.5);
+            border-bottom: 2px solid #cc3366;
+            padding-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        .content {
+            color: #ccc;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(30, 30, 30, 0.8);
+            border: 1px solid #444;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            border-radius: 5px;
+            position: relative;
+        }
+        .content:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: #cc3366;
+        }
+        .tags {
+            margin: 30px 0;
+            font-size: 0.9em;
+        }
+        .tags a {
+            background: linear-gradient(to bottom, #222, #1a1a1a);
+            color: #cc9999;
+            padding: 8px 15px;
+            text-decoration: none;
+            margin-right: 10px;
+            border-radius: 4px;
+            display: inline-block;
+            margin-bottom: 10px;
+            border: 1px solid #444;
+            transition: all 0.3s;
+        }
+        .tags a:hover {
+            background: linear-gradient(to bottom, #331a1f, #2a0a14);
+            color: #cc3366;
+            border: 1px solid #cc3366;
+            box-shadow: 0 0 10px rgba(204, 51, 102, 0.3);
+        }
+        
+        .recommend-articles {
+            margin: 40px 0;
+            padding: 20px;
+            background: rgba(30, 30, 30, 0.8);
+            border-radius: 8px;
+            border: 1px solid #444;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            position: relative;
+        }
+        .recommend-articles:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(to right, #cc3366, transparent);
+        }
+        .recommend-articles h3 {
+            color: #cc3366;
+            margin-bottom: 20px;
+            text-shadow: 0 0 6px rgba(204, 51, 102, 0.4);
+        }
+
+        .recommend-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .recommend-list li {
+            margin-bottom: 15px;
+            padding-left: 25px;
+            position: relative;
+        }
+        .recommend-list li:before {
+            content: "✠";
+            color: #cc3366;
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 1.1em;
+        }
+        .recommend-list a {
+            color: #cc9999;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        .recommend-list a:hover {
+            color: #cc3366;
+            text-decoration: underline;
+            text-shadow: 0 0 5px rgba(204, 51, 102, 0.5);
+        }
+        
+        .friendly-links {
+            margin-top: 50px;
+        }
+        .friendly-links .container {
+            margin-bottom: 30px;
+        }
+        .friendly-links .title {
+            font-size: 1.1em;
+            color: #cc3366;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #444;
+        }
+        .friendly-links ul {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 10px;
+        }
+        .friendly-links li a {
+            display: block;
+            padding: 10px 12px;
+            background: linear-gradient(to bottom, #222, #1a1a1a);
+            border-radius: 4px;
+            color: #cc9999;
+            text-decoration: none;
+            font-size: 0.9em;
+            border: 1px solid #444;
+            transition: all 0.3s;
+            text-align: center;
+        }
+        .friendly-links li a:hover {
+            background: linear-gradient(to bottom, #331a1f, #2a0a14);
+            color: #cc3366;
+            border: 1px solid #cc3366;
+            box-shadow: 0 0 8px rgba(204, 51, 102, 0.3);
+        }
+        
+        a[href$="xml"] {
+            display: block;
+            text-align: center;
+            margin-top: 40px;
+            color: #999;
+            font-size: 14px;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        a[href$="xml"]:hover {
+            color: #cc3366;
+            text-decoration: underline;
+        }
+        .software-img {
+            display: block;
+            margin: 0 auto 20px;
+            max-width: 150px;
+            border: 1px solid #cc3366;
+            box-shadow: 0 0 15px rgba(204, 51, 102, 0.5);
+        }
+    </style>
+    <script src="/yidong.js"></script>
+</head>
+<body>
+    <header>
+         <img src="/logo.jpg" alt="logo" class="software-img">   
+    </header>
+
+    <h1>萌萝社：二次元爱好者的聚集地，畅享漫画与社交新体验</h1>
+
+    <div class="content">
+        <p><h1>探索萌萝社：你的专属二次元乐园</h1><p>萌萝社APP，一款专为二次元爱好者打造的互动社交软件，汇聚海量漫画资源，提供丰富的短视频作品，更有直播间互动与cosplay交流，让你沉浸在浓厚的二次元氛围中。无论你是漫画迷、短视频爱好者，还是希望结识同好，萌萝社都能满足你的需求。</p><h2>一、 轻松管理你的圈子</h2><p>在萌萝社，你可以创建或加入各种兴趣圈子，与志同道合的朋友分享热爱。如果你想删除某个圈子，操作非常简单：</p><ul><li>打开萌萝社APP，进入“我的圈子”页面。</li><li>长按你想删除的圈子封面图或名称。</li><li>在弹出的菜单中选择“删除”，并确认操作。</li></ul><p>告别不合拍的圈子，让你的社区体验更加纯粹。</p><h2>二、 畅享游戏与安装指南</h2><p>萌萝社不仅提供丰富的漫画和短视频内容，还可能集成游戏下载与安装功能。如果你下载了萌萝社的游戏，按照以下步骤进行安装：</p><ul><li>在手机中找到并打开已下载的游戏文件。</li><li>进入游戏设置，按照提示输入你的游戏账号等信息。</li><li>点击下载并安装游戏，即可开始畅玩。</li></ul><p>若你是iOS用户，可前往App Store搜索“萌萝社ios轻量版”进行下载；Android用户则可在应用商店搜索安装。</p><h2>三、 账号安全与绑定</h2><p>为了保障你的账号安全和更好地使用萌萝社各项功能，绑定手机号是必要的步骤。如果在绑定手机号时遇到问题，请：</p><ul><li>打开萌萝社APP，找到“绑定手机号”选项。</li><li>按照页面提示，输入你的手机号码并完成验证。</li></ul><p>绑定手机号后，你将能更便捷地登录、找回密码，并享受更多个性化服务。</p><h2>四、 萌萝社：你不知道的二次元世界</h2><p>萌萝社APP是一款集聚海量漫画资源的浏览软件，为用户提供丰富的内容选择，无需付费即可畅享阅读乐趣，并支持离线下载。它也是一个正规的手机社交平台，用户可以进行线上线下的互动交流。在这里，你可以结识新朋友，讨论你喜爱的角色，甚至可能看到精彩的cosplay表演。</p><h2>五、 如何开启你的萌萝社之旅</h2><p>想要体验萌萝社的精彩内容？只需简单几步：</p><ul><li>在应用商店搜索并下载“萌萝社”APP。</li><li>下载完成后，点击APP图标即可打开。</li><li>首次使用，可能需要登录或进行简单的注册。</li></ul><p>一旦登录成功，你便可以开始探索萌萝社丰富的漫画库、观看有趣的短视频，并与社区成员互动交流。</p></p>
+    </div>
+    
+    <div class="recommend-articles">
+        <h3>2篇随机内容推荐</h3>
+        <ul class="recommend-list">
+            <li><a href="irfc.html">由良佳奈的生辰信息</a></li><li><a href="m4fhyyf4rz.html">oui：多重含义与广泛应用解析</a></li>
+        </ul>
+    </div>
+    
+    <div class="friendly-links">
+        <div class="container">
+            <h4 class="title">生活点滴好用</h4>
+            <ul>
+                <li><a href="http://www.weizhang8.cn/" rel="nofollow" target="_blank">违章查询</a></li>
+                <li><a href="https://www.didiglobal.com/" rel="nofollow" target="_blank">滴滴打车</a></li>
+            </ul>
+        </div>
+        
+        <div class="container">
+            <h4 class="title">购物网址大全</h4>
+            <ul>
+                <li><a href="http://www.vip.com/" rel="nofollow" target="_blank">唯品会</a></li>
+                <li><a href="http://www.vmall.com/" rel="nofollow" target="_blank">华为商城</a></li>
+                <li><a href="http://www.tmall.com/" rel="nofollow" target="_blank">天猫商城</a></li>
+                <li><a href="https://www.amazon.cn/" rel="nofollow" target="_blank">亚马逊</a></li>
+                <li><a href="http://www.jd.com/" rel="nofollow" target="_blank">京东商城</a></li>
+            </ul>
+        </div>
+    </div>
+    <a href="sitemap.xml" target="_blank">网站地图</a>
+</body>
+</html>
